@@ -217,7 +217,7 @@ section.music-showcase {
 
 section.new-songs {
   padding: 100px 0 100px;
-  height: 100vh; }
+  min-height: 100vh; }
   section.new-songs .title {
     text-align: center;
     display: flex;
@@ -252,36 +252,21 @@ section.new-songs {
 .gallery {
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit minmax(200px, 1fr));
   grid-auto-flow: dense;
   grid-auto-rows: 300px; }
-  .gallery .wrapper:nth-child(4n) {
-    grid-column-end: span 2;
-    grid-row-end: span 2; }
-  .gallery .wrapper:nth-child(5) {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3; }
-  .gallery .wrapper:nth-child(1) {
-    grid-row: 1 / 1;
-    grid-row: 1 / 3; }
-  .gallery .wrapper:nth-child(1) {
-    grid-row: 1 / 1; }
-  @media only screen and (max-width: 600px) {
-    .gallery .wrapper:nth-child(2) {
-      grid-column: auto;
-      grid-row: initial; }
+  @media (min-width: 1024px) {
+    .gallery .wrapper:nth-child(4n) {
+      grid-column-end: span 2;
+      grid-row-end: span 2; }
     .gallery .wrapper:nth-child(5) {
-      grid-column: auto;
-      grid-row: initial; } }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .gallery .wrapper:first-child {
-      grid-column: 1/3; }
-    .gallery .wrapper:nth-child(2n) {
-      grid-column: 1/1;
-      grid-row: initial; }
-    .gallery .wrapper:last-child {
-      grid-column: 1/3;
-      grid-row: 1/3; } }
+      grid-column: 1 / 3;
+      grid-row: 1 / 3; }
+    .gallery .wrapper:nth-child(1) {
+      grid-row: 1 / 1;
+      grid-row: 1 / 3; }
+    .gallery .wrapper:nth-child(1) {
+      grid-row: 1 / 1; } }
   .gallery img {
     width: 100%;
     height: 100%;
