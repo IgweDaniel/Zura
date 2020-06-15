@@ -137,13 +137,17 @@ section.music-showcase {
     align-content: center;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 200px);
-    grid-auto-rows: 200px; }
+    grid-auto-rows: 250px; }
   section.music-showcase .music-showcase-item {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
     section.music-showcase .music-showcase-item .album {
       position: relative;
-      height: 100%;
+      height: 80%;
       width: 100%;
       cursor: pointer; }
     section.music-showcase .music-showcase-item .album-cover,
@@ -166,6 +170,21 @@ section.music-showcase {
       top: 0;
       left: 0;
       z-index: -1; }
+    section.music-showcase .music-showcase-item .meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+      section.music-showcase .music-showcase-item .meta .song-title {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 1.2px;
+        color: #5d5d5d; }
+      section.music-showcase .music-showcase-item .meta .singer {
+        color: #bb9b69;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px; }
     section.music-showcase .music-showcase-item:nth-of-type(1) .album-disk {
       background-image: url("../assets/images/disk3.png"); }
     section.music-showcase .music-showcase-item:nth-of-type(2) .album-disk {
