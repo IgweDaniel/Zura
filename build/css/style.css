@@ -3,6 +3,10 @@
   font-family: "Againts";
   src: url("../assets/fonts/againts.otf"); }
 
+@font-face {
+  font-family: "Hensa";
+  src: url("../assets/fonts/Hensa.otf"); }
+
 .button, .button-outline {
   display: flex;
   align-items: center;
@@ -108,12 +112,12 @@ section.hero {
 
 section.music-showcase {
   min-height: 100vh;
-  padding: 50px; }
+  padding: 100px 0 100px; }
   section.music-showcase .title {
     font-size: 30px;
     font-weight: 400;
     line-height: 1.1;
-    margin: 100px;
+    margin-bottom: 100px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -164,20 +168,101 @@ section.music-showcase {
     section.music-showcase .music-showcase-item:nth-of-type(4) .album-disk {
       background-image: url("../assets/images/disk1.png"); }
 
+.social-handles {
+  height: 400px;
+  background-image: url("../assets/images/header.jpg");
+  background-image: url("../assets/images/v2.jpg");
+  background-position: center 20%;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative; }
+  .social-handles:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4; }
+  .social-handles .social-links {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .social-handles .social-link {
+    height: 40px;
+    width: 110px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #000000 !important; }
+    .social-handles .social-link span {
+      display: inline-block;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      font-size: 14px; }
+    .social-handles .social-link.twitter {
+      background-color: #1da1f2; }
+    .social-handles .social-link.instagram {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+    .social-handles .social-link i {
+      width: 20%;
+      color: #fff !important; }
+
+section.new-songs {
+  padding: 100px 0 100px;
+  height: 100vh; }
+  section.new-songs .title {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Hensa";
+    font-weight: 400;
+    line-height: 1.1;
+    font-size: 30px; }
+    section.new-songs .title .underline {
+      color: #edcefd;
+      display: block;
+      font-size: 4.5rem;
+      position: relative;
+      top: -1.5rem; }
+  section.new-songs .songs {
+    display: grid;
+    gap: 80px;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-rows: 250px; }
+    section.new-songs .songs .song {
+      cursor: pointer; }
+    section.new-songs .songs .song img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center; }
+
 .gallery {
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, mnmax(200px, 1fr));
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   grid-auto-flow: dense;
   grid-auto-rows: 300px; }
-  .gallery .wrapper:nth-child(4n + 1) {
+  .gallery .wrapper:nth-child(4n) {
     grid-column-end: span 2;
     grid-row-end: span 2; }
-  .gallery .wrapper:nth-child(2) {
-    grid-column: 3;
-    grid-row: 2 / 4; }
   .gallery .wrapper:nth-child(5) {
     grid-column: 1 / 3;
+    grid-row: 1 / 3; }
+  .gallery .wrapper:nth-child(1) {
+    grid-row: 1 / 1;
     grid-row: 1 / 3; }
   .gallery .wrapper:nth-child(1) {
     grid-row: 1 / 1; }
