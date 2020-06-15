@@ -84,6 +84,7 @@ header {
 
 section.hero {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background-image: url("../assets/images/landing.jpg");
   background-image: url("../assets/images/landvar4.jpg");
   background-position: center;
@@ -112,6 +113,7 @@ section.hero {
 
 section.music-showcase {
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   padding: 100px 0 100px; }
   section.music-showcase .title {
     font-size: 30px;
@@ -150,6 +152,11 @@ section.music-showcase {
       width: 100%; }
     section.music-showcase .music-showcase-item .album-cover {
       position: relative; }
+    section.music-showcase .music-showcase-item .album-cover img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      object-position: center; }
     section.music-showcase .music-showcase-item .album-disk {
       position: absolute;
       display: block;
@@ -169,17 +176,30 @@ section.music-showcase {
       background-image: url("../assets/images/disk1.png"); }
 
 .social-handles {
-  height: 400px;
+  height: 350px;
   background-image: url("../assets/images/header.jpg");
   background-image: url("../assets/images/v2.jpg");
-  background-position: center 20%;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: #fff;
   position: relative; }
+  .social-handles .title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-family: "Againts";
+    z-index: 2; }
+  @media only screen and (max-width: 600px) {
+    .social-handles {
+      background-position: center;
+      height: 350px; } }
   .social-handles:after {
     content: "";
     position: absolute;
@@ -187,7 +207,8 @@ section.music-showcase {
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0.4; }
+    opacity: 0.4;
+    background-color: #000; }
   .social-handles .social-links {
     z-index: 2;
     display: flex;

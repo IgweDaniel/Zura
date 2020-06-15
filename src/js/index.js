@@ -1,11 +1,15 @@
+let vh = window.innerHeight * 0.01;
+
+window.addEventListener("resize", () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
+document.documentElement.style.setProperty("--vh", `${vh}px`);
 import { TimelineLite, Power2 } from "gsap";
 
 const albums = document.querySelectorAll(".album");
 
-// const tl = new TimelineLite();
 function animateDisk(e, tl) {
-  console.log("here");
-
   const el = e.target;
 
   const disk = el.querySelector(".album-disk");
