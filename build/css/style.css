@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 35px;
   width: 100px;
   border-radius: 50px;
   cursor: pointer; }
@@ -86,7 +86,6 @@ section.hero {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background-image: url("../assets/images/landing.jpg");
-  background-image: url("../assets/images/landvar4.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -94,6 +93,9 @@ section.hero {
   align-items: center;
   justify-content: center;
   flex-direction: column; }
+  @media only screen and (max-width: 600px) {
+    section.hero {
+      background-attachment: scroll; } }
   section.hero .hero-text {
     color: #fff; }
     section.hero .hero-text span {
@@ -139,6 +141,12 @@ section.music-showcase {
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 200px);
     grid-auto-rows: 250px; }
+    @media only screen and (max-width: 600px) {
+      section.music-showcase .music-showcase-items {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, 150px);
+        grid-auto-rows: 200px; } }
   section.music-showcase .music-showcase-item {
     height: 100%;
     width: 100%;
@@ -156,9 +164,11 @@ section.music-showcase {
       height: 100%;
       width: 100%; }
     section.music-showcase .music-showcase-item .album-cover {
-      position: relative; }
+      position: relative;
+      height: 100%;
+      width: 100%; }
     section.music-showcase .music-showcase-item .album-cover img {
-      object-fit: cover;
+      object-fit: contain;
       height: 100%;
       width: 100%;
       object-position: center; }
@@ -167,11 +177,12 @@ section.music-showcase {
       display: block;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: center;
+      background-size: contain;
       top: 0;
       left: 0;
       z-index: -1; }
     section.music-showcase .music-showcase-item .meta {
+      height: 20%;
       display: flex;
       align-items: center;
       justify-content: center;

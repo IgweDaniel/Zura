@@ -93,7 +93,7 @@ section.hero {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background-image: url("../assets/images/landing.jpg");
-  background-image: url("../assets/images/landvar4.jpg");
+  // background-image: url("../assets/images/landvar4.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -101,6 +101,9 @@ section.hero {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media only screen and (max-width: 600px) {
+    background-attachment: scroll;
+  }
   .hero-text {
     color: #fff;
     span {
@@ -157,6 +160,11 @@ section.music-showcase {
     grid-template-columns: repeat(auto-fit, $albumsize);
     grid-auto-rows: $albumsize + 50px;
     @media only screen and (max-width: 600px) {
+      $albumsize: 150px;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, $albumsize);
+      grid-auto-rows: $albumsize + 50px;
     }
   }
   .music-showcase-item {
@@ -179,11 +187,12 @@ section.music-showcase {
       width: 100%;
     }
     .album-cover {
-      // transition: all 0.2s ease-in;
       position: relative;
+      height: 100%;
+      width: 100%;
     }
     .album-cover img {
-      object-fit: cover;
+      object-fit: contain;
       height: 100%;
       width: 100%;
       object-position: center;
@@ -194,14 +203,14 @@ section.music-showcase {
       display: block;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: center;
+      background-size: contain;
       top: 0;
       left: 0;
       z-index: -1;
-      // transition: left 0.2s ease-in;
     }
 
     .meta {
+      height: 20%;
       display: flex;
       align-items: center;
       justify-content: center;

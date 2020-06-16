@@ -10,6 +10,7 @@ import { TimelineLite, Power2 } from "gsap";
 const albums = document.querySelectorAll(".album");
 
 function animateDisk(e, tl) {
+  if (window.innerWidth < 600) return;
   const el = e.target;
 
   const disk = el.querySelector(".album-disk");
